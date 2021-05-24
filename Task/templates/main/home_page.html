@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <h5 class="alert alert-danger mt-5 text-center">Welcome</h5>
+        <a href="{% url 'create-page'%}" class="btn btn-primary" style="width: 20%;">Create Expenses</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Person Name</th>
+                <th scope="col">House Rent</th>
+                <th scope="col">Food Bill</th>
+                <th scope="col">Electricity Bill</th>
+                <th scope="col">Water Bill</th>
+                <th scope="col">Other Bill</th>
+                <th scope="col">Total</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for t in qs %}
+              <tr>
+                <th scope="row">{{t.month}}</th>
+                <td>{{t.name}}</td>
+                <td>{{t.rent}}</td>
+                <td>{{t.food}}</td>
+                <td>{{t.electricity}}</td>
+                <td>{{t.water}}</td>
+                <td>{{t.other_bills}}</td>
+                <td>{{t.total}}</td>
+                <td>
+                    <a href="{% url 'update-page' t.pk%}" class="btn btn-primary">Update</a>
+                    <a href="{% url 'delete-page' t.pk%}" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+              {% endfor %}
+              <!-- <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr> -->
+            </tbody>
+          </table>
+    </div>
+  </div>
+
+{% endblock content %}
