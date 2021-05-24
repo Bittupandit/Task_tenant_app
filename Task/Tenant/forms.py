@@ -6,4 +6,4 @@ from .models import *
 class TenantForm(forms.ModelForm):
     class Meta:
         model = Tenant
-        fields = ['name','month','rent','electricity','water','food','other_bills']
+        fields = ['occupant','month','rent','electricity','water','food','other_bills']

@@ -11,7 +11,7 @@
             <thead>
               <tr>
                 <th scope="col">Month</th>
-                <th scope="col">Person Name</th>
+                <th scope="col">No. of Occupant</th>
                 <th scope="col">House Rent</th>
                 <th scope="col">Food Bill</th>
                 <th scope="col">Electricity Bill</th>
@@ -25,7 +25,7 @@
                 {% for t in qs %}
               <tr>
                 <th scope="row">{{t.month}}</th>
-                <td>{{t.name}}</td>
+                <td>{{t.occupant}}</td>
                 <td>{{t.rent}}</td>
                 <td>{{t.food}}</td>
                 <td>{{t.electricity}}</td>
