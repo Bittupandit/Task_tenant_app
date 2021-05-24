@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+    <div class="row text" style="width: 50%; margin-left: 20%;">
+        <h5 class="alert alert-danger mt-5 text-center">Creat Your Expenses</h5>
+        <p>If None please fill = 0</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form|crispy }}
+            <br>
+            <a href="{% url 'home-page'%}" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary" >Create</button>
+        </form>
+    </div>
+</div>
+
+{% endblock content %}
