@@ -21,6 +21,7 @@ class Tenant(models.Model):
         ('December','December'),
     )
     name = models.CharField(max_length=100,blank=True, null=True,verbose_name="Person Name")
+    occupant = models.PositiveIntegerField(blank=True, null=True,verbose_name="Occupant")
     month = models.CharField(max_length=9,choices=MONTH_CHOICES,blank=True, null=True,verbose_name="Month")
     rent = models.PositiveIntegerField(blank=True, null=True,verbose_name="Rent")
     electricity = models.PositiveIntegerField(blank=True, null=True,verbose_name="Electricity Bill")
@@ -41,6 +42,6 @@ class Tenant(models.Model):
         super(Tenant,self).save(*args,**kwargs)
 
     def __str__(self):
-        return f'Person Name: {self.name}'
+        return f'No. of Occupant: {self.occupant}'
     
 
